@@ -33,11 +33,13 @@ const Input = styled.input`
 `
 
 const Center = styled.div`
-    color: red;
     flex: 1;
+    text-align: center;
+`
+const Header = styled.h1`
+    font-weight: bold;
 `
 const Right = styled.div`
-    color: red;
     flex: 1;
 `
 
@@ -52,7 +54,9 @@ const NavBar = () => {
                    <Search/>
                 </SearchContainer>
             </Left>
-            <Center>Center</Center>
+            <Center>
+                <Header>BUY</Header>
+            </Center>
             <Right>Right</Right>
         </Wrapper>
 
