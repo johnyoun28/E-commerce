@@ -1,11 +1,10 @@
 import { Search, ShoppingCartOutlined } from '@mui/icons-material';
 import { Badge } from '@mui/material';
-
 import React from 'react'
 import styled from 'styled-components';
 
 const Container = styled.div`
-    height: 40px;
+    height: 60px;
 `
 const Wrapper = styled.div`
     padding: 10px 20px;
@@ -32,6 +31,7 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
     border: none;
+    outline: none;
 `
 
 const Center = styled.div`
