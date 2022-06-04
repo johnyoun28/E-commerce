@@ -7,6 +7,7 @@ const Container = styled.div`
     height: 100vh;
     display: flex;
     position: relative;
+    overflow: hidden;
 `
 const Arrow = styled.div`
     width: 50px;
@@ -28,13 +29,17 @@ const Arrow = styled.div`
 
 const Wrapper = styled.div`
     height: 100%;
+    display: flex;
+    /* transform: translateX(0vw); */
 `
 
 const Slide = styled.div`
-    display: flex;
-    align-items: center;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center; 
+    background-color: #${props => props.bg};
+
 `
 const ImgContainer = styled.div`
     flex: 1;
@@ -67,30 +72,52 @@ const Button = styled.button`
 
 
 const Slider = () => {
+
+    const handleClick = e => {
+
+    }
+
   return (
     <div>
        <Container>
-       <Arrow direction='left'>
+       <Arrow direction='left' onClick={() => handleClick('left')}>
             <ArrowLeftOutlined />
         </Arrow>
 
         <Wrapper>
-            <Slide>
+            <Slide bg='f5fafd'>
                 <ImgContainer>
                 <Image src="https://www.nicepng.com/png/full/8-88585_women-fashion-png-example-of-magazine-cover.png"/>
                 </ImgContainer>
             <InfoContainer>
                 <Title>SUMMER SALE!</Title>
-                <Desc>DON'T COMPRMOISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
+                <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
                 <Button>SHOW NOW</Button>
             </InfoContainer>
-
-
             </Slide>
-
+            <Slide bg='fcf1ed'>
+                <ImgContainer>
+                <Image src="https://www.nicepng.com/png/full/8-88585_women-fashion-png-example-of-magazine-cover.png"/>
+                </ImgContainer>
+            <InfoContainer>
+                <Title>WINTER SALE!</Title>
+                <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
+                <Button>SHOW NOW</Button>
+            </InfoContainer>
+            </Slide>
+            <Slide bg='f5fafd'>
+                <ImgContainer>
+                <Image src="https://www.nicepng.com/png/full/8-88585_women-fashion-png-example-of-magazine-cover.png"/>
+                </ImgContainer>
+            <InfoContainer>
+                <Title>POPULAR SALE!</Title>
+                <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
+                <Button>SHOW NOW</Button>
+            </InfoContainer>
+            </Slide>
         </Wrapper>
 
-        <Arrow direction='right'>
+        <Arrow direction='right' onClick={() => handleClick('right')}>>
             <ArrowRightOutlined />
         </Arrow>
 
