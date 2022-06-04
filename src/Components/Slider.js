@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
+import { sliderItems } from '../data';
 
 const Container = styled.div`
     width: 100%;
@@ -25,12 +26,14 @@ const Arrow = styled.div`
     margin: auto;
     cursor: pointer;
     opacity: 0.5;
+    z-index: 2;
 `
 
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
-    /* transform: translateX(0vw); */
+    transform: translateX(${props => props.slideIndex * -100}vw);
+    transition: all 1.5s ease;
 `
 
 const Slide = styled.div`
@@ -72,9 +75,14 @@ const Button = styled.button`
 
 
 const Slider = () => {
+    const [slideIndex, setSlideIndex] = useState(0)
 
-    const handleClick = e => {
-
+    const handleClick = direction => {
+        if (direction === 'left') {
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
+        } else {
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
+        }
     }
 
   return (
@@ -84,40 +92,22 @@ const Slider = () => {
             <ArrowLeftOutlined />
         </Arrow>
 
-        <Wrapper>
-            <Slide bg='f5fafd'>
+        <Wrapper slideIndex = {slideIndex}>
+            {sliderItems.map(item => (
+            <Slide bg={item.bg}>
                 <ImgContainer>
-                <Image src="https://www.nicepng.com/png/full/8-88585_women-fashion-png-example-of-magazine-cover.png"/>
+                <Image src={item.img}/>
                 </ImgContainer>
             <InfoContainer>
-                <Title>SUMMER SALE!</Title>
-                <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
+                <Title>{item.title}</Title>
+                <Desc>{item.desc}</Desc>
                 <Button>SHOW NOW</Button>
             </InfoContainer>
             </Slide>
-            <Slide bg='fcf1ed'>
-                <ImgContainer>
-                <Image src="https://www.nicepng.com/png/full/8-88585_women-fashion-png-example-of-magazine-cover.png"/>
-                </ImgContainer>
-            <InfoContainer>
-                <Title>WINTER SALE!</Title>
-                <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
-                <Button>SHOW NOW</Button>
-            </InfoContainer>
-            </Slide>
-            <Slide bg='f5fafd'>
-                <ImgContainer>
-                <Image src="https://www.nicepng.com/png/full/8-88585_women-fashion-png-example-of-magazine-cover.png"/>
-                </ImgContainer>
-            <InfoContainer>
-                <Title>POPULAR SALE!</Title>
-                <Desc>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Desc>
-                <Button>SHOW NOW</Button>
-            </InfoContainer>
-            </Slide>
+            ))}
         </Wrapper>
 
-        <Arrow direction='right' onClick={() => handleClick('right')}>>
+        <Arrow direction='right' onClick={() => handleClick('right')}>
             <ArrowRightOutlined />
         </Arrow>
 
