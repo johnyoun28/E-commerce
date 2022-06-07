@@ -10,7 +10,7 @@ const Container = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; // The object-fit CSS property sets how the content of a replaced element, such as an <img> or <video>, should be resized to fit its container.
 
 `
 const Info = styled.div`
