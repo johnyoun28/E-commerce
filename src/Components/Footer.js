@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-    /* display: flex; */
+    display: flex;
 `
 const Left = styled.div`
     flex: 1;
@@ -37,11 +37,22 @@ const Center = styled.div`
     flex: 1;
     padding: 20px;
 `
-const Title = styled.h3``
+const Title = styled.h3`
+    margin-bottom: 30px;
+`
 
-const List = styled.ul``
+const List = styled.ul`
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+`
 
-const ListItem = styled.li
+const ListItem = styled.li`
+    width: 50%;
+    margin-bottom: 10px;
+`
 
 const Right = styled.div`
     flex: 1;
@@ -68,7 +79,7 @@ const Footer = () => {
         </Left>
         <Center>
 
-            {/* <Title>Useful Links</Title>
+            <Title>Useful Links</Title>
             <List>
                 <ListItem>Home</ListItem>
                 <ListItem>Cart</ListItem>
@@ -80,7 +91,7 @@ const Footer = () => {
                 <ListItem>Wishlist</ListItem>
                 <ListItem>Wishlist</ListItem>
                 <ListItem>Terms</ListItem>
-            </List> */}
+            </List>
 
         </Center>
         <Right>
