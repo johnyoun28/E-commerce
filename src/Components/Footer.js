@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from '@mui/icons-material'
+import { Facebook, Instagram, MailOutline, Phone, Room, Twitter } from '@mui/icons-material'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -58,13 +58,23 @@ const Right = styled.div`
     flex: 1;
     padding: 20px;
 `
+const ContactItem = styled.div`
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+`
+
+const Payment = styled.img`
+    width: 50%;
+`
+
 
 const Footer = () => {
   return (
     <Container>
         <Left>
             <Logo>LOGO</Logo>
-            <Desc>Lorem ipsum</Desc>
+            <Desc>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus velit augue, ac sodales est imperdiet ac. Duis tincidunt, mi at finibus aliquam, elit dolor semper libero, at tincidunt sem sem id metus.</Desc>
             <SocialContainer>
                 <SocialIcon color='3B5999'>
                     <Facebook/>
@@ -95,6 +105,17 @@ const Footer = () => {
 
         </Center>
         <Right>
+            <Title>Contact</Title>
+            <ContactItem>
+                <Room style={{marginRight:"10px"}} /> 622 Address, South Address 12345
+            </ContactItem>
+            <ContactItem>
+                <Phone style={{marginRight:"10px"}}/> +1 234 56 78
+            </ContactItem>
+            <ContactItem>
+                <MailOutline style={{marginRight:"10px"}}/> contact@john.dev
+            </ContactItem>
+            <Payment src='https://i.ibb.co/Qfvn4z6/payment.png' />
 
         </Right>
     </Container>
