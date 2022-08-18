@@ -1,4 +1,5 @@
 
+import { Add, Remove } from '@mui/icons-material'
 import React from 'react'
 import styled from 'styled-components'
 import Announcement from '../Components/Announcement'
@@ -38,7 +39,7 @@ const Price = styled.span`
 `
 
 const FilterContainer = styled.div`
-    width: 45%;
+    width: 50%;
     margin: 30px 0;
     display: flex;
     justify-content: space-between;
@@ -64,6 +65,39 @@ const FilterSize = styled.select`
     padding: 5px;
 `
 const FilterSizeOption = styled.option``
+
+const AddContainer = styled.div`
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+`
+const AmountContainer = styled.div`
+    display: flex;
+    align-items:center ;
+    font-weight: 700;
+`
+const Amount = styled.span`
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid teal;
+    margin: 0 5px;
+`
+const Button = styled.button`
+    border: 2px solid teal;
+    background-color: white;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+        background-color: #f8f4f4;
+    }
+`
 
 
 
@@ -92,16 +126,24 @@ const Product = () => {
 
                         <FilterTitle>Size</FilterTitle>
                         <FilterSize>
+                            <FilterSizeOption>XS</FilterSizeOption>
                             <FilterSizeOption>S</FilterSizeOption>
                             <FilterSizeOption>M</FilterSizeOption>
                             <FilterSizeOption>L</FilterSizeOption>
-                            <FilterSizeOption>S</FilterSizeOption>
-                            <FilterSizeOption>S</FilterSizeOption>
-                        </FilterSize>
-                        
+                            <FilterSizeOption>XL</FilterSizeOption>
+                        </FilterSize>   
                     </Filter>
 
                 </FilterContainer>
+                <AddContainer>
+
+                    <AmountContainer>
+                        <Remove/>
+                        <Amount>1</Amount>
+                        <Add/>
+                    </AmountContainer>
+                    <Button>Add to cart</Button>
+                </AddContainer>
             </InfoContainer>
         </Wrapper>
         <Newsletter/>
