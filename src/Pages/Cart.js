@@ -3,6 +3,7 @@ import Announcement from '../Components/Announcement'
 import Footer from '../Components/Footer'
 import NavBar from '../Components/NavBar'
 import styled from 'styled-components'
+import { Add, Remove } from '@mui/icons-material'
 
 const Container = styled.div`
 `
@@ -53,15 +54,49 @@ const ProductDetail = styled.div`
 const Image = styled.img`
     width: 200px;
 `
-const Details = styled.div``
+const Details = styled.div`
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+`
 const ProductName = styled.span``
 const ProductId = styled.span``
-const ProductColor = styled.div``
+const ProductColor = styled.div`
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: ${props=>props.color};
+`
 const ProductSize = styled.span``
 const PriceDetail = styled.div`
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`
+const ProductAmountContainer = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    
+`
+const ProductAmount = styled.div`
+    font-style: 24px;
+    margin: 5px;
 `
 
+const ProductPrice = styled.div`
+    font-size: 30px;
+    font-weight: 200;
+`
+
+const Hr = styled.hr`
+    background-color: #eee;
+    border: none;
+    height: 1px;
+`
 
 const Summary = styled.div`
     flex: 1;
@@ -93,14 +128,42 @@ const Cart = () => {
                             <Details>
                                 <ProductName> <b>PRODUCT:</b> JESSIE THUNDER SHOES</ProductName>
                                 <ProductId> <b>ID:</b> 93948142</ProductId>
-                                <ProductColor />
+                                <ProductColor color='black' />
                                 <ProductSize> <b>Size:</b> 37.5</ProductSize>
                             </Details>
                         </ProductDetail>
                         <PriceDetail>
-                            price
+                            <ProductAmountContainer>
+                                <Add />
+                                <ProductAmount>2</ProductAmount>
+                                <Remove />
+                            </ProductAmountContainer>
+                            <ProductPrice>$ 30</ProductPrice>
                         </PriceDetail>
                     </Product>
+
+                    <Hr />
+                    <Product>
+    
+                <ProductDetail>
+
+                    <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
+                    <Details>
+                        <ProductName> <b>PRODUCT:</b> HAKURA T-SHIRT</ProductName>
+                        <ProductId> <b>ID:</b> 93948142</ProductId>
+                        <ProductColor color='gray' />
+                        <ProductSize> <b>Size:</b> M</ProductSize>
+                    </Details>
+                </ProductDetail>
+                <PriceDetail>
+                    <ProductAmountContainer>
+                        <Add />
+                        <ProductAmount>1</ProductAmount>
+                        <Remove />
+                    </ProductAmountContainer>
+                    <ProductPrice>$ 20</ProductPrice>
+                </PriceDetail>
+            </Product>
                 </Info>
                 <Summary>Summary</Summary>
             </Bottom>
