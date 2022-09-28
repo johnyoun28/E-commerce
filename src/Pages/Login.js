@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import NavBar from '../Components/NavBar'
 import { mobile } from '../responsive'
 
 const Container = styled.div`

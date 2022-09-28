@@ -3,6 +3,7 @@ import { Badge } from '@mui/material';
 import React from 'react'
 import styled from 'styled-components';
 import {mobile} from '../responsive'
+import {Link} from 'react-router-dom'
 
 const Container = styled.div`
     height: 60px;
@@ -79,16 +80,18 @@ const NavBar = () => {
             </Center>
 
             <Right>
+                <Link style={{textDecoration: 'none'}} to='/login'>
                 <MenuItems>SIGN IN</MenuItems>
+                </Link>
+                
+                <Link style={{textDecoration: 'none'}} to='/register'>
                 <MenuItems>REGISTER</MenuItems>
-                <MenuItems>
+                </Link>
+                <Link style={{textDecoration: 'none'}} to='/cart'>
                 <Badge badgeContent={100} color="primary">
                 <ShoppingCartOutlined />
                 </Badge>
-      
-  
-                </MenuItems>
-                
+                </Link>
             </Right>
         </Wrapper>
 
